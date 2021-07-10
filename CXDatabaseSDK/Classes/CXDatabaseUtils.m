@@ -84,7 +84,7 @@ static FMDatabaseQueue *CXDatabaseQueue(void){
     __block BOOL columnExists = NO;
     [CXDatabaseQueue() inDatabase:^(FMDatabase * _Nonnull db) {
         tableExists = [db tableExists:tableName];
-        if(tableExists && [CXStringUtil isValidString:columnName]){
+        if(tableExists && [CXStringUtils isValidString:columnName]){
             columnExists = [db columnExists:columnName inTableWithName:tableName];
         }
     }];
